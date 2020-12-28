@@ -29,12 +29,12 @@ import com.rapiddweller.stat.LatencyCounter;
  */
 public class Profile {
 	
-	private String name;
-	private Profile parent;
-	private Map<String, Profile> subProfiles;
-	private LatencyCounter counter;
-	private DecimalFormat nf = new DecimalFormat("0");
-	private DecimalFormat df = new DecimalFormat("0.0");
+	private final String name;
+	private final Profile parent;
+	private final Map<String, Profile> subProfiles;
+	private final LatencyCounter counter;
+	private final DecimalFormat nf = new DecimalFormat("0");
+	private final DecimalFormat df = new DecimalFormat("0.0");
 
 	public Profile(String name, Profile parent) {
 		this.parent = parent;

@@ -24,7 +24,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class ThreadCounter extends ThreadLocal<ThreadCounter> {
 	
-	private AtomicInteger count = new AtomicInteger();
+	private final AtomicInteger count = new AtomicInteger();
 	
 	@Override
 	protected ThreadCounter initialValue() {

@@ -14,11 +14,12 @@
  */
 package com.rapiddweller.contiperf.report;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
-
 import com.rapiddweller.contiperf.report.LatencyDataSet.LabelInfo;
 import com.rapiddweller.stat.LatencyCounter;
+
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 
 /**
  * Formats the latency distribution of a {@link LatencyCounter} using the Google charts API.<br/><br/>
@@ -28,7 +29,7 @@ import com.rapiddweller.stat.LatencyCounter;
  */
 public class GoogleLatencyRenderer {
 	
-	public String render(LatencyCounter counter, String title, int width, int height) {
+	public String render(LatencyCounter counter, String title, int width, int height) throws UnsupportedEncodingException {
 		LatencyDataSet dataset = new LatencyDataSet((int) (counter.maxLatency() - counter.minLatency() + 3));
 		for (int i = (int) counter.minLatency(); i <= counter.maxLatency(); i++)
 			dataset.addPoint(i, (int) counter.getLatencyCount(i));
@@ -39,29 +40,25 @@ public class GoogleLatencyRenderer {
 		return renderDataset(dataset, title, width, height);
 	}
 	
-	String renderDataset(LatencyDataSet dataset, String title, int width, int height) {
+	String renderDataset(LatencyDataSet dataset, String title, int width, int height) throws UnsupportedEncodingException {
 		dataset.scaleY(80);
-		try {
-			StringBuilder builder = new StringBuilder("http://chart.apis.google.com/chart?cht=lxy"); // xy line chart
-			builder.append("&chs=").append(width).append('x').append(height); // image size
-			appendData(dataset, builder); // data definition
-			builder.append("&chxt=x"); // render x axis only
-			builder.append("&chxr=0,0," + dataset.getMaxX()); // x axis scale (#axis, min, max, tick spacing)
-			builder.append("&chds=0," + dataset.getMaxX() + ",0,100"); // data scale (min x, max x, min y, max y)
-			builder.append("&chf=c,lg,0,FFFFFF,0,FFFF88,1");
-			renderLabels(dataset, builder);
-			if (title != null)
-				builder.append("&chtt=" + URLEncoder.encode(title, "UTF-8")); // title
-			return builder.toString();
-		} catch (UnsupportedEncodingException e) {
-			throw new RuntimeException("Error encoding title: " + title, e);
-		}
+		StringBuilder builder = new StringBuilder("http://chart.apis.google.com/chart?cht=lxy"); // xy line chart
+		builder.append("&chs=").append(width).append('x').append(height); // image size
+		appendData(dataset, builder); // data definition
+		builder.append("&chxt=x"); // render x axis only
+		builder.append("&chxr=0,0,").append(dataset.getMaxX()); // x axis scale (#axis, min, max, tick spacing)
+		builder.append("&chds=0,").append(dataset.getMaxX()).append(",0,100"); // data scale (min x, max x, min y, max y)
+		builder.append("&chf=c,lg,0,FFFFFF,0,FFFF88,1");
+		renderLabels(dataset, builder);
+		if (title != null)
+			builder.append("&chtt=").append(URLEncoder.encode(title, java.nio.charset.StandardCharsets.UTF_8.toString())); // title
+		return builder.toString();
 	}
 
 	private static void renderLabels(LatencyDataSet dataset, StringBuilder builder) {
 		builder.append("&chm=B,FFE69B,0,0,0"); // fill
 		for (LabelInfo label : dataset.getLabels())
-			builder.append("|A" + label.text + ",666666,0," + label.index + ",15"); // labels
+			builder.append("|A").append(label.text).append(",666666,0,").append(label.index).append(",15"); // labels
 	}
 
 	private static void appendData(LatencyDataSet dataset, StringBuilder builder) {

@@ -28,9 +28,9 @@ import java.util.List;
  */
 public class ReportContext {
 
-	private File reportFolder;
-	private Constructor<? extends Error> failureCtor;
-	private List<ReportModule> modules;
+	private final File reportFolder;
+	private final Constructor<? extends Error> failureCtor;
+	private final List<ReportModule> modules;
 	
 	public ReportContext(File reportFolder, Class<? extends Error> failureClass) {
 		this.reportFolder = reportFolder;

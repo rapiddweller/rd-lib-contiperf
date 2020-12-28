@@ -25,9 +25,9 @@ import com.rapiddweller.contiperf.util.ContiPerfUtil;
  */
 public class ConcurrentRunner implements InvocationRunner {
 
-	private String name;
+	private final String name;
 	private InvocationRunner[] runners;
-	private int rampUp;
+	private final int rampUp;
 	
 	public ConcurrentRunner(String name, InvocationRunner[] runners, int rampUp) {
 	    this.name = name;

@@ -26,8 +26,8 @@ public class Profiler {
 	
 	private static final Profiler DEFAULT_INSTANCE = new Profiler("default", 1);
 
-	private long granularity;
-	private Profile rootProfile;
+	private final long granularity;
+	private final Profile rootProfile;
 	
 	public Profiler(String name, long granularity) {
 		this.granularity = granularity;

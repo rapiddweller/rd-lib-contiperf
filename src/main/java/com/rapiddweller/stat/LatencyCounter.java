@@ -26,12 +26,12 @@ import com.rapiddweller.contiperf.clock.SystemClock;
  */
 public final class LatencyCounter {
 	
-	private String name;
-	private String clockName;
+	private final String name;
+	private final String clockName;
 	
     private int minLatency;
     private int maxLatency;
-    private long latencyCounts[];
+    private long[] latencyCounts;
 
     private boolean running;
     private long startTime;

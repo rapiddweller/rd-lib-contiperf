@@ -26,13 +26,13 @@ import com.rapiddweller.contiperf.timer.None;
 public class ExecutionConfig {
 	
 	private int invocations;
-	private int duration;
-	private Clock[] clocks;
-	private int rampUp;
-	private int warmUp;
-	private int threads;
+	private final int duration;
+	private final Clock[] clocks;
+	private final int rampUp;
+	private final int warmUp;
+	private final int threads;
 	WaitTimer waitTimer;
-	private boolean cancelOnViolation;
+	private final boolean cancelOnViolation;
 	// TODO v2.x private int timeout;
 	
 	public ExecutionConfig(int invocations) {
@@ -49,7 +49,7 @@ public class ExecutionConfig {
 	    this.warmUp = warmUp;
 	    this.cancelOnViolation = cancelOnViolation;
 	    try {
-			waitTimer = (WaitTimer) waitTimerClass.newInstance();
+			waitTimer = waitTimerClass.newInstance();
 			waitTimer.init(waitParams);
 		} catch (Exception e) {
 			throw new RuntimeException(e);

@@ -14,6 +14,7 @@
  */
 package com.rapiddweller.contiperf.report;
 
+import java.io.UnsupportedEncodingException;
 import java.util.Random;
 
 import com.rapiddweller.contiperf.report.GoogleLatencyRenderer;
@@ -30,7 +31,7 @@ import org.junit.Test;
 public class GoogleLatencyRendererTest {
 
 	@Test
-	public void testDataset() {
+	public void testDataset() throws UnsupportedEncodingException {
 		LatencyDataSet dataset = new LatencyDataSet(15);
 		dataset.addPoint(4, 0);
 		dataset.addPoint(5, 1);
@@ -55,7 +56,7 @@ public class GoogleLatencyRendererTest {
 	Random random = new Random();
 
 	@Test
-	public void testCounter() {
+	public void testCounter() throws UnsupportedEncodingException {
 		LatencyCounter counter = new LatencyCounter("test");
 		for (int i = 0; i < 50000; i ++)
 			counter.addSample(rand() + rand() + rand() + rand());

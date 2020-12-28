@@ -26,9 +26,9 @@ import com.rapiddweller.contiperf.util.ContiPerfUtil;
  */
 public class CountRunner extends AbstractInvocationRunner {
 
-    private ArgumentsProvider argsProvider;
+    private final ArgumentsProvider argsProvider;
     private Invoker invoker;
-    private AtomicLong invocationsLeft;
+    private final AtomicLong invocationsLeft;
 
     public CountRunner(Invoker invoker, ArgumentsProvider argsProvider, 
     		WaitTimer waitTimer, AtomicLong invocationsLeft) {

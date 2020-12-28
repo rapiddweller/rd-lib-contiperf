@@ -42,11 +42,11 @@ import org.junit.runners.model.Statement;
  */
 final class PerfTestStatement extends Statement {
 	
-    private String id;
+    private final String id;
     private final Statement base;
-    private ReportContext context;
-    private ExecutionConfig config;
-    private PerformanceRequirement requirement;
+    private final ReportContext context;
+    private final ExecutionConfig config;
+    private final PerformanceRequirement requirement;
 
     PerfTestStatement(Statement base, String id, ExecutionConfig config, 
     		PerformanceRequirement requirement, ReportContext context) {

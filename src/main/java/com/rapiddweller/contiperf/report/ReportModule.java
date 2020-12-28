@@ -32,5 +32,5 @@ public interface ReportModule {
 	
 	void starting(String serviceId);
 	void invoked(String serviceId, int latency, long startTime);
-	public void completed(String serviceId, LatencyCounter[] counters, ExecutionConfig executionConfig, PerformanceRequirement requirement);
+	void completed(String serviceId, LatencyCounter[] counters, ExecutionConfig executionConfig, PerformanceRequirement requirement);
 }

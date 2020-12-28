@@ -26,7 +26,7 @@ public class RandomTimer extends AbstractTimer {
 	
 	private int min =  500;
 	private int range = 1001;
-	private java.util.Random random = new java.util.Random();
+	private final java.util.Random random = new java.util.Random();
 	
 	public void init(double[] params) {
 		checkParamCount(2, params);

@@ -14,13 +14,7 @@
  */
 package com.rapiddweller.contiperf.report;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.util.Date;
@@ -50,7 +44,7 @@ public class HtmlReportModule extends AbstractReportModule {
 
 	ReportContext context;
 	private static boolean initialized = false;
-	private static DecimalFormat lf = new DecimalFormat();
+	private static final DecimalFormat lf = new DecimalFormat();
 
 
 
@@ -139,7 +133,7 @@ public class HtmlReportModule extends AbstractReportModule {
 			out.println("</body>");
 			out.println("</html>");
 			out.close();
-		} catch (FileNotFoundException e) {
+		} catch (FileNotFoundException | UnsupportedEncodingException e) {
 			throw new RuntimeException(e);
 		}
 	}
@@ -188,7 +182,7 @@ public class HtmlReportModule extends AbstractReportModule {
 		return "<td style='background-color:" + (success ? "#00BB00" : "RED") + ";'>&nbsp;</td>";
 	}
 
-	private static void appendEntry(String serviceId, LatencyCounter[] counters, ExecutionConfig executionConfig, PerformanceRequirement requirement, PrintWriter out, ReportContext context) {
+	private static void appendEntry(String serviceId, LatencyCounter[] counters, ExecutionConfig executionConfig, PerformanceRequirement requirement, PrintWriter out, ReportContext context) throws UnsupportedEncodingException {
 		// render header
 		out.println("<a name='" + serviceId + "'><h2 style='color:#EE6600'>" + serviceId + "</h2></a>");
 		// render stats table...
@@ -225,7 +219,7 @@ public class HtmlReportModule extends AbstractReportModule {
 		out.print("<a href='" + ref + "'>" + label + "</a>");
 	}
 
-	private static void renderStats(String id, LatencyCounter counter, PrintWriter out) {
+	private static void renderStats(String id, LatencyCounter counter, PrintWriter out) throws UnsupportedEncodingException {
 		String chartUrl = new GoogleLatencyRenderer().render(counter, null, WIDTH, HEIGHT);
 		out.println("			<img src='" + chartUrl +"' width='" + WIDTH + "', height='" + HEIGHT + "'/>");
 	}
@@ -265,7 +259,7 @@ public class HtmlReportModule extends AbstractReportModule {
 		if (counters.length > 1) {
 			secondaryValues = new long[counters.length - 1];
 			for (int i = 1; i < counters.length; i++)
-				secondaryValues[i - 1] = (long) counters[i].duration();
+				secondaryValues[i - 1] = counters[i].duration();
 		}
 		printStatMsLine("Execution time:", counters[0].duration(), required, secondaryValues, verdict, out);
 	}
@@ -287,7 +281,7 @@ public class HtmlReportModule extends AbstractReportModule {
 		if (counters.length > 1) {
 			secondaryValues = new long[counters.length - 1];
 			for (int i = 1; i < counters.length; i++)
-				secondaryValues[i - 1] = (long) counters[i].minLatency();
+				secondaryValues[i - 1] = counters[i].minLatency();
 		}
 		printStatMsLine("Min. latency:", counters[0].minLatency(), null, secondaryValues, Verdict.IGNORED, out);
 	}

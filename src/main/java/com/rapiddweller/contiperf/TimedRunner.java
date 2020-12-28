@@ -24,8 +24,8 @@ import com.rapiddweller.contiperf.util.ContiPerfUtil;
  */
 public class TimedRunner extends AbstractInvocationRunner {
 
-    private long duration;
-    private ArgumentsProvider argsProvider;
+    private final long duration;
+    private final ArgumentsProvider argsProvider;
     private Invoker invoker;
 
     public TimedRunner(Invoker invoker, ArgumentsProvider argsProvider, 

@@ -22,7 +22,7 @@ package com.rapiddweller.contiperf;
  */
 public abstract class AbstractInvocationRunner implements InvocationRunner {
 	
-	private WaitTimer wait;
+	private final WaitTimer wait;
 
 	protected AbstractInvocationRunner(WaitTimer wait) {
 		this.wait = wait;

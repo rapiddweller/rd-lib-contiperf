@@ -26,8 +26,8 @@ import org.junit.runners.model.Statement;
  */
 public class JUnitInvoker implements Invoker {
 	
-	private String id;
-	private Statement base;
+	private final String id;
+	private final Statement base;
 
 	public JUnitInvoker(String id, Statement base) {
 	    this.id = id;

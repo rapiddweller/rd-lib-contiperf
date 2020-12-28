@@ -26,7 +26,7 @@ import com.rapiddweller.contiperf.Clock;
  */
 public abstract class AbstractClock implements Clock {
 
-	private String name;
+	private final String name;
 
 	public AbstractClock(String name) {
 		this.name = name;

@@ -34,7 +34,7 @@ public class Config {
 	
 	public boolean active() {
 		String sysprop = System.getProperty(SYSPROP_ACTIVE);
-		return (sysprop == null || !"false".equals(sysprop.trim().toLowerCase()));
+		return (sysprop == null || !"false".equalsIgnoreCase(sysprop.trim()));
     }
 
 	// helpers ---------------------------------------------------------------------------------------------------------

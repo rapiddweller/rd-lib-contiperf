@@ -39,7 +39,7 @@ public class CSVSummaryReportModule extends AbstractReportModule {
 
 	private static final String LINE_SEPARATOR = System.getProperty("line.separator");
 
-	private static Set<File> usedFiles = new HashSet<File>();
+	private static final Set<File> usedFiles = new HashSet<File>();
 
 	private File file;
 

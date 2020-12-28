@@ -45,7 +45,7 @@ import com.rapiddweller.stat.LatencyCounter;
  */
 public class StopWatch {
 
-	private String name;
+	private final String name;
 	private long startTime;
 	
 	public StopWatch(String name) {

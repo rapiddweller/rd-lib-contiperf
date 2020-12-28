@@ -29,8 +29,8 @@ import com.rapiddweller.stat.LatencyCounter;
  */
 public class ListReportModule extends AbstractReportModule {
 	
-	private List<InvocationLog> invocations;
-	private List<InvocationSummary> summaries;
+	private final List<InvocationLog> invocations;
+	private final List<InvocationSummary> summaries;
 	
 	public ListReportModule() {
 		this.invocations = new ArrayList<InvocationLog>();

@@ -33,8 +33,8 @@ import com.rapiddweller.contiperf.report.ListReportModule;
 @Deprecated
 public class ListExecutionLogger implements ExecutionLogger {
 	
-	private List<InvocationLog> invocations;
-	private List<InvocationSummary> summaries;
+	private final List<InvocationLog> invocations;
+	private final List<InvocationSummary> summaries;
 	
 	public ListExecutionLogger() {
 		this.invocations = new ArrayList<InvocationLog>();

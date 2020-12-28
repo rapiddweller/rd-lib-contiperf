@@ -80,7 +80,7 @@ public class MemorySensor {
 	
 	class MeasurementThread extends Thread {
 		
-		private int interval;
+		private final int interval;
 		
 		public MeasurementThread(int interval) {
 			this.interval = interval;

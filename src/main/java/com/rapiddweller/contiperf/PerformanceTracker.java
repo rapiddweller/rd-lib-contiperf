@@ -35,7 +35,7 @@ public class PerformanceTracker extends InvokerProxy {
     
     private ReportContext context;
     
-    private Clock[] clocks;
+    private final Clock[] clocks;
     private LatencyCounter[] counters;
     private boolean trackingStarted;
     private long warmUpFinishedTime;

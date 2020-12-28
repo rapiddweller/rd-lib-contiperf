@@ -33,7 +33,7 @@ import java.util.Set;
  */
 public class CounterRepository {
 	
-	private Map<String, LatencyCounter> counters;
+	private final Map<String, LatencyCounter> counters;
 
 
 

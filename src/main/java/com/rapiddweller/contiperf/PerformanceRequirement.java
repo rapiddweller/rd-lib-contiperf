@@ -24,10 +24,10 @@ import com.rapiddweller.contiperf.util.ContiPerfUtil;
  */
 public class PerformanceRequirement {
 
-	private int average;
+	private final int average;
 	private int max;
-	private int totalTime;
-	private int throughput;
+	private final int totalTime;
+	private final int throughput;
 
 	private PercentileRequirement[] percentiles;
 

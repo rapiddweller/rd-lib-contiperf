@@ -159,13 +159,13 @@ public class ContiPerfRuleTest {
 	
 	// helper methods --------------------------------------------------------------------------------------------------
 
-	private static TestBean check(String methodName) throws NoSuchMethodException, Throwable {
+	private static TestBean check(String methodName) throws Throwable {
 	    return check(new TestBean(), methodName);
     }
 	
-	private static TestBean check(TestBean target, String methodName) throws NoSuchMethodException, Throwable {
+	private static TestBean check(TestBean target, String methodName) throws Throwable {
 	    ContiPerfRule rule = new ContiPerfRule(new ListReportModule());
-		Method method = TestBean.class.getDeclaredMethod(methodName, new Class<?>[0]);
+		Method method = TestBean.class.getDeclaredMethod(methodName);
 		Statement base = new InvokerStatement(target, method);
 		FrameworkMethod fwMethod = new FrameworkMethod(method);
 		Statement perfTestStatement = rule.apply(base, fwMethod, target);

@@ -33,9 +33,9 @@ import org.junit.runners.model.RunnerScheduler;
  */
 public class ParallelScheduler implements RunnerScheduler {
 	
-	private Queue<Future<String>> tasks = new LinkedList<Future<String>>();
-	private ExecutorService executorService = Executors.newCachedThreadPool();
-	private CompletionService<String> completionService = new ExecutorCompletionService<String>(executorService);
+	private final Queue<Future<String>> tasks = new LinkedList<Future<String>>();
+	private final ExecutorService executorService = Executors.newCachedThreadPool();
+	private final CompletionService<String> completionService = new ExecutorCompletionService<String>(executorService);
 
 	public void schedule(final Runnable childStatement) {
 		Future<String> future = completionService.submit(new Callable<String>() {

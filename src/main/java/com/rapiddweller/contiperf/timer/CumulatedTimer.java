@@ -29,7 +29,7 @@ public class CumulatedTimer extends AbstractTimer {
 	
 	private int min   =  500;
 	private int range = 1000;
-	private Random random = new Random();
+	private final Random random = new Random();
 	
 	public void init(double[] params) {
 		checkParamCount(2, params);
