@@ -4,7 +4,7 @@
 
     <groupId>com.rapiddweller</groupId>
     <artifactId>rd-lib-contiperf</artifactId>
-	<version>2.4.0+jdk-11</version>
+	<version>2.4.0+jdk-11-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>rapiddweller ContiPerf</name>
@@ -307,6 +307,10 @@
         <repository>
             <id>gitlab-maven</id>
             <url>${env.CI_SERVER_URL}/api/v4/groups/${CI_PROJECT_GROUP_ID}/-/packages/maven</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
         </repository>
     </repositories>
     <distributionManagement>
