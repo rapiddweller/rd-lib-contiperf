@@ -163,14 +163,14 @@ public class ContiPerfRule implements MethodRule {
 			try {
 				if (base instanceof RunAfters) {
 					runAfters = (RunAfters) base;
-					Field fNext = base.getClass().getDeclaredField("fNext");
-					fNext.setAccessible(true);
-					base = (Statement) fNext.get(base);
+					Field next = base.getClass().getDeclaredField("next");
+					next.setAccessible(true);
+					base = (Statement) next.get(base);
 				} else if (base instanceof RunBefores) {
 					runBefores = (RunBefores) base;
-					Field fNext = base.getClass().getDeclaredField("fNext");
-					fNext.setAccessible(true);
-					base = (Statement) fNext.get(base);
+					Field next = base.getClass().getDeclaredField("next");
+					next.setAccessible(true);
+					base = (Statement) next.get(base);
 				}
 			} catch (Exception e) {
 				throw new RuntimeException(e);
@@ -189,16 +189,16 @@ public class ContiPerfRule implements MethodRule {
 		try {
 			// if runBefores has been removed, reapply it
 			if (runBefores != null) {
-				Field fNext = runBefores.getClass().getDeclaredField("fNext");
-				fNext.setAccessible(true);
-				fNext.set(runBefores, base);
+				Field next = runBefores.getClass().getDeclaredField("next");
+				next.setAccessible(true);
+				next.set(runBefores, base);
 				base = runBefores;
 			}
 			// if runAfters has been removed, reapply it
 			if (runAfters != null) {
-				Field fNext = runAfters.getClass().getDeclaredField("fNext");
-				fNext.setAccessible(true);
-				fNext.set(runAfters, base);
+				Field next = runAfters.getClass().getDeclaredField("next");
+				next.setAccessible(true);
+				next.set(runAfters, base);
 				base = runAfters;
 			}
 		} catch (Exception e) {
