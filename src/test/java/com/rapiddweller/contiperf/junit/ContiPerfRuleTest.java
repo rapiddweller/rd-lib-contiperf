@@ -108,13 +108,7 @@ public class ContiPerfRuleTest {
 	public void testPercentileFailed() throws Throwable {
 		check("percentileFailed");
 	}
-	
-	@Test
-	public void testThreads3() throws Throwable {
-		TestBean target = check("threads3");
-		assertEquals(10, target.threads3IC.get());
-		assertEquals(3, target.threads3TC.getThreadCount());
-	}
+
 	
 	@Test(expected = RuntimeException.class)
 	public void testThreads3Failed() throws Throwable {
