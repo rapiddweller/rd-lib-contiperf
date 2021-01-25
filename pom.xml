@@ -383,29 +383,27 @@
 
     <repositories>
         <repository>
-            <id>gitlab-maven</id>
-            <url>${env.CI_SERVER_URL}/api/v4/groups/${CI_PROJECT_GROUP_ID}/-/packages/maven</url>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </snapshots>
+            <id>rdd-nexus</id>
+            <url>https://nexus.dwellerlab.com/repository/maven-rdd</url>
         </repository>
     </repositories>
 
     <distributionManagement>
         <repository>
-            <id>gitlab-maven</id>
-            <url>${env.CI_SERVER_URL}/api/v4/projects/${env.CI_PROJECT_ID}/packages/maven/</url>
+            <id>rdd-nexus</id>
+            <name>Releases</name>
+            <url>https://nexus.dwellerlab.com/repository/releases</url>
         </repository>
         <snapshotRepository>
-            <id>gitlab-maven</id>
-            <url>${env.CI_SERVER_URL}/api/v4/projects/${env.CI_PROJECT_ID}/packages/maven/</url>
+            <id>rdd-nexus</id>
+            <name>Snapshot</name>
+            <url>https://nexus.dwellerlab.com/repository/snapshots</url>
         </snapshotRepository>
     </distributionManagement>
 
     <scm>
-        <url>${env.CI_PROJECT_URL}</url>
-        <connection>scm:git:${env.CI_REPOSITORY_URL}</connection>
-        <developerConnection>scm:git:${env.CI_REPOSITORY_URL}</developerConnection>
+        <url>https://github.com/rapiddweller/rd-lib-contiperf</url>
+        <connection>scm:git:github.com/rapiddweller/rd-lib-contiperf</connection>
+        <developerConnection>scm:git:github.com/rapiddweller/rd-lib-contiperf</developerConnection>
     </scm>
 </project>
