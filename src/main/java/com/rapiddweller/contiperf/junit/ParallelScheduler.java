@@ -33,17 +33,18 @@ import org.junit.runners.model.RunnerScheduler;
  */
 public class ParallelScheduler implements RunnerScheduler {
 	
-	private final Queue<Future<String>> tasks = new LinkedList<Future<String>>();
+	private final Queue<Future<String>> tasks = new LinkedList<>();
 	private final ExecutorService executorService = Executors.newCachedThreadPool();
-	private final CompletionService<String> completionService = new ExecutorCompletionService<String>(executorService);
+	private final CompletionService<String> completionService =
+			new ExecutorCompletionService<>(executorService);
 
 	public void schedule(final Runnable childStatement) {
-		Future<String> future = completionService.submit(new Callable<String>() {
+		Future<String> future = completionService.submit(new Callable<>() {
 			public String call() {
 				childStatement.run();
 				return toString();
 			}
-			
+
 			@Override
 			public String toString() {
 				return childStatement.toString();

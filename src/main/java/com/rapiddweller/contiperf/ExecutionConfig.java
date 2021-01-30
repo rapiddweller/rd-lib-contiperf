@@ -49,7 +49,7 @@ public class ExecutionConfig {
 	    this.warmUp = warmUp;
 	    this.cancelOnViolation = cancelOnViolation;
 	    try {
-			waitTimer = waitTimerClass.newInstance();
+			waitTimer = waitTimerClass.getDeclaredConstructor().newInstance();
 			waitTimer.init(waitParams);
 		} catch (Exception e) {
 			throw new RuntimeException(e);

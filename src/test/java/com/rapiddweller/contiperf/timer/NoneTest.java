@@ -29,7 +29,7 @@ public class NoneTest {
 
 	@Test
 	public void testEmptyInitialization() throws Exception {
-		WaitTimer timer = None.class.newInstance();
+		WaitTimer timer = None.class.getDeclaredConstructor().newInstance();
 		timer.init(new double[0]);
 		for (int i = 0; i < 1000; i++)
 			assertEquals(0, timer.getWaitTime());

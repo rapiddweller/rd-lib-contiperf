@@ -50,9 +50,10 @@ public class BeforeAfterTest {
 	@Test
 	@PerfTest(invocations = 1000)
 	public void test() {
-		assertTrue("method before() may only be called once, but was called " + beforeCount + " times", 
-				beforeCount == 1);
-		assertTrue(afterCount == 0);
+        assertEquals(
+                "method before() may only be called once, but was called " +
+                        beforeCount + " times", 1, beforeCount);
+        assertEquals(0, afterCount);
 	}
 	
 }

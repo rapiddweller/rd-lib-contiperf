@@ -17,6 +17,7 @@ package com.rapiddweller.contiperf.util;
 import java.io.Closeable;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.rapiddweller.contiperf.Clock;
@@ -80,7 +81,7 @@ public class ContiPerfUtil {
 
 	private static Clock clock(Class<? extends Clock> clockClass) {
 		try {
-			return clockClass.newInstance();
+			return clockClass.getDeclaredConstructor().newInstance();
 		} catch (Exception e) {
 			throw new RuntimeException("Error creating clock " + clockClass.getName(), e);
 		}
@@ -95,7 +96,7 @@ public class ContiPerfUtil {
 		int max = annotation.max();
 		int totalTime = annotation.totalTime();
 		
-		List<PercentileRequirement> percTmp = new ArrayList<PercentileRequirement>();
+		List<PercentileRequirement> percTmp = new ArrayList<>();
 		int median = annotation.median();
 		if (median > 0)
 			percTmp.add(new PercentileRequirement(50, median));
@@ -110,8 +111,7 @@ public class ContiPerfUtil {
 			percTmp.add(new PercentileRequirement(99, percentile99));
 
 		PercentileRequirement[] customPercs = parsePercentiles(annotation.percentiles());
-		for (PercentileRequirement percentile : customPercs)
-			percTmp.add(percentile);
+		percTmp.addAll(Arrays.asList(customPercs));
 		PercentileRequirement[] percs = new PercentileRequirement[percTmp.size()];
 		percTmp.toArray(percs);
 		return new PerformanceRequirement(average, max, totalTime, percs, throughput);

@@ -187,7 +187,7 @@ public class ContiPerfSuiteTest {
 	
 	public static class UnconfiguredTest {
 		@Test
-		public void test() throws Exception {
+		public void test() {
 			uCount.incrementAndGet();
 		}
 	}
@@ -197,7 +197,7 @@ public class ContiPerfSuiteTest {
 	public static class ConfiguredMethodTest extends AbstractContiPerfTest {
 		@Test
 		@PerfTest(invocations = 2)
-		public void test() throws Exception {
+		public void test() {
 			cCount.incrementAndGet();
 		}
 	}
@@ -207,7 +207,7 @@ public class ContiPerfSuiteTest {
 	@PerfTest(invocations = 3)
 	public static class ConfiguredClassTest extends AbstractContiPerfTest {
 		@Test
-		public void test() throws Exception {
+		public void test() {
 			cCount.incrementAndGet();
 		}
 	}
@@ -218,7 +218,7 @@ public class ContiPerfSuiteTest {
 	public static class ConfiguredClassAndMethodTest extends AbstractContiPerfTest {
 		@Test
 		@PerfTest(invocations = 7)
-		public void test() throws Exception {
+		public void test() {
 			cCount.incrementAndGet();
 		}
 	}

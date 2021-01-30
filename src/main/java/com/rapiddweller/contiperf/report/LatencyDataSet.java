@@ -38,7 +38,7 @@ public class LatencyDataSet {
 		this.pointCount = 0;
 		this.xx = new int[capacity];
 		this.yy = new int[capacity];
-		this.labels = new ArrayList<LabelInfo>();
+		this.labels = new ArrayList<>();
 	}
 	
 	public void addPoint(int x, int y) {
@@ -97,7 +97,7 @@ public class LatencyDataSet {
 		return i;
 	}
 
-	public class LabelInfo {
+	public static class LabelInfo {
 		public final String text;
 		public final int index;
 		

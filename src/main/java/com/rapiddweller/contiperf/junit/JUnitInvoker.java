@@ -38,7 +38,7 @@ public class JUnitInvoker implements Invoker {
 		return id;
 	}
 
-	public Object invoke(Object[] args) throws Exception {
+	public Object invoke(Object[] args) {
 		try {
 	        base.evaluate();
 	        return null;

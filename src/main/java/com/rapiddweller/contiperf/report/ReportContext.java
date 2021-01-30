@@ -43,7 +43,7 @@ public class ReportContext {
 			throw new RuntimeException("Failure classes need a constructor with one String argument, " 
 					+ failureClass + " does not have one", e);
 		}
-		this.modules = new ArrayList<ReportModule>();
+		this.modules = new ArrayList<>();
 	}
 	
 	public File getReportFolder() {

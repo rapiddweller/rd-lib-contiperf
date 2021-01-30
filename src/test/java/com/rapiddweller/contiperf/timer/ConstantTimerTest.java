@@ -29,7 +29,7 @@ public class ConstantTimerTest {
 
 	@Test
 	public void testEmptyInitialization() throws Exception {
-		WaitTimer timer = ConstantTimer.class.newInstance();
+		WaitTimer timer = ConstantTimer.class.getDeclaredConstructor().newInstance();
 		timer.init(new double[0]);
 		for (int i = 0; i < 1000; i++)
 			assertEquals(1000, timer.getWaitTime());
@@ -37,7 +37,7 @@ public class ConstantTimerTest {
 	
 	@Test
 	public void testNormalInitialization() throws Exception {
-		WaitTimer timer = ConstantTimer.class.newInstance();
+		WaitTimer timer = ConstantTimer.class.getDeclaredConstructor().newInstance();
 		timer.init(new double[] { 123 });
 		for (int i = 0; i < 1000; i++)
 			assertEquals(123, timer.getWaitTime());
@@ -45,7 +45,7 @@ public class ConstantTimerTest {
 	
 	@Test
 	public void testTooManyParams() throws Exception {
-		WaitTimer timer = ConstantTimer.class.newInstance();
+		WaitTimer timer = ConstantTimer.class.getDeclaredConstructor().newInstance();
 		timer.init(new double[] { 234, 456 });
 		for (int i = 0; i < 1000; i++)
 			assertEquals(234, timer.getWaitTime());

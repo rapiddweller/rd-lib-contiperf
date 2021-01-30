@@ -19,7 +19,6 @@ import com.rapiddweller.stat.LatencyCounter;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
 
 /**
  * Formats the latency distribution of a {@link LatencyCounter} using the Google charts API.<br/><br/>

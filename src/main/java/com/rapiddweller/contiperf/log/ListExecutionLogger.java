@@ -37,8 +37,8 @@ public class ListExecutionLogger implements ExecutionLogger {
 	private final List<InvocationSummary> summaries;
 	
 	public ListExecutionLogger() {
-		this.invocations = new ArrayList<InvocationLog>();
-		this.summaries = new ArrayList<InvocationSummary>();
+		this.invocations = new ArrayList<>();
+		this.summaries = new ArrayList<>();
     }
 
 	public void logInvocation(String id, int latency, long startTime) {
