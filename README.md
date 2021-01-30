@@ -1,5 +1,7 @@
 # rd-lib-contiperf
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/1bfeb5b085644bba9a1dcddc17f686db)](https://app.codacy.com/gh/rapiddweller/rd-lib-contiperf?utm_source=github.com&utm_medium=referral&utm_content=rapiddweller/rd-lib-contiperf&utm_campaign=Badge_Grade)
+
 'rapiddweller Contiperf' is an open source Java library forked from Databene Contiperf by Volker Bergmann.
 
 It provides extensions to the Java core library by utility classes, abstract concepts
