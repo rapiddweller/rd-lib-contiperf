@@ -74,12 +74,12 @@ public abstract class AbstractContiPerfTest {
     	
     	
     	@Override
-        public void testFinished(Description description) throws Exception {
+        public void testFinished(Description description) {
     		finished = true;
     	}
 
     	@Override
-        public void testFailure(Failure failure) throws Exception {
+        public void testFailure(Failure failure) {
     		failed = true;
     	}
 
@@ -89,7 +89,7 @@ public abstract class AbstractContiPerfTest {
     	}
 
     	@Override
-        public void testIgnored(Description description) throws Exception {
+        public void testIgnored(Description description) {
     		ignored = true;
     	}
     }

@@ -59,22 +59,17 @@ public class StopWatchTest {
 	public void testParallelCalls() throws InterruptedException {
 		Thread[] threads = new Thread[20];
 		for (int i = 0; i < threads.length; i++) {
-			threads[i] = new Thread() {
-				@Override
-				public void run() {
-					try {
-						for (int i = 0; i < 20; i++)
-							sleepTimed(50);
-					} catch (InterruptedException e) {
-						throw new RuntimeException(e);
-					}
+			threads[i] = new Thread(() -> {
+				try {
+					for (int i1 = 0; i1 < 20; i1++)
+						sleepTimed(50);
+				} catch (InterruptedException e) {
+					throw new RuntimeException(e);
 				}
-			};
+			});
 		}
-		for (int i = 0; i < threads.length; i++)
-			threads[i].start();
-		for (int i = 0; i < threads.length; i++)
-			threads[i].join();
+		for (Thread value : threads) value.start();
+		for (Thread thread : threads) thread.join();
 		LatencyCounter counter = getCounter();
 		assertEquals(400, counter.sampleCount());
 		assertTrue(counter.minLatency() >= 39);

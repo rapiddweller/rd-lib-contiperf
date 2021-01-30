@@ -72,7 +72,7 @@ public class ConcurrentRunner implements InvocationRunner {
      * interrupting the execution of all threads in case of a {@link Throwable} and
      * memorizing the {@link Throwable}.
      */
-    class CPThreadGroup extends ThreadGroup {
+    static class CPThreadGroup extends ThreadGroup {
     	
     	Throwable throwable;
 

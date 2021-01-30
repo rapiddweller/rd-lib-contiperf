@@ -128,7 +128,7 @@ public class ContiPerfRule implements MethodRule {
 		else
 			this.context = context;
 		if (suite != null) {
-			Class<? extends Object> suiteClass = suite.getClass();
+			Class<?> suiteClass = suite.getClass();
 			this.defaultExecutionConfig = configurePerfTest(suiteClass.getAnnotation(PerfTest.class), suiteClass.getName());
 			this.defaultRequirements = ContiPerfUtil.mapRequired(suiteClass.getAnnotation(Required.class));
 		}
@@ -253,8 +253,7 @@ public class ContiPerfRule implements MethodRule {
 		T methodAnnotation = method.getAnnotation(annotationClass);
 		if (methodAnnotation != null)
 			return methodAnnotation;
-		T classAnnotation = method.getMethod().getDeclaringClass().getAnnotation(annotationClass);
-        return classAnnotation;
+		return method.getMethod().getDeclaringClass().getAnnotation(annotationClass);
 	}
 	
 	public static ExecutionConfig configurePerfTest(PerfTest annotation, String testId) {

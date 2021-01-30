@@ -39,7 +39,7 @@ public class ContiPerfSuiteRunner extends Suite {
 
 	private static Object instantiate(Class<?> suiteClass) {
 	    try {
-	        return suiteClass.newInstance();
+	        return suiteClass.getDeclaredConstructor().newInstance();
         } catch (Exception e) {
 	        throw new RuntimeException(e);
         }
@@ -60,7 +60,7 @@ public class ContiPerfSuiteRunner extends Suite {
         }
 
 		@Override
-        public Runner runnerForClass(Class<?> testClass) throws Throwable {
+        public Runner runnerForClass(Class<?> testClass) {
 			List<RunnerBuilder> builders = Arrays.asList(
 					ignoredBuilder(),
 					annotatedBuilder(),

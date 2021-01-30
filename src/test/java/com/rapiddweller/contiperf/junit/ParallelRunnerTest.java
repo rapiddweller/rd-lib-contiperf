@@ -42,7 +42,7 @@ public class ParallelRunnerTest {
 	
 	@Test
 	@PerfTest(duration = 2000, threads = 3, timer = ConstantTimer.class, timerParams = { 1200 })
-	public void test1() throws Exception {
+	public void test1() {
 		long currentTime = System.currentTimeMillis();
 		if (test1First == -1)
 			test1First = currentTime;
@@ -52,7 +52,7 @@ public class ParallelRunnerTest {
 	
 	@Test
 	@PerfTest(duration = 3000, threads = 2, timer = ConstantTimer.class, timerParams = { 700 })
-	public void test2() throws Exception {
+	public void test2() {
 		long currentTime = System.currentTimeMillis();
 		if (test2First == -1)
 			test2First = currentTime;
@@ -61,7 +61,7 @@ public class ParallelRunnerTest {
 	}
 	
 	@Test
-	public void test3() throws Exception {
+	public void test3() {
 		// empty method for testing
 	}
 	

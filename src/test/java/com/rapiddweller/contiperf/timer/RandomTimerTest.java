@@ -29,7 +29,7 @@ public class RandomTimerTest {
 
 	@Test
 	public void testEmptyInitialization() throws Exception {
-		WaitTimer timer = RandomTimer.class.newInstance();
+		WaitTimer timer = RandomTimer.class.getDeclaredConstructor().newInstance();
 		timer.init(new double[0]);
 		for (int i = 0; i < 1000; i++)
 			assertRange(500, 1500, timer.getWaitTime());
@@ -37,7 +37,7 @@ public class RandomTimerTest {
 
 	@Test
 	public void testUnderInitialization() throws Exception {
-		WaitTimer timer = RandomTimer.class.newInstance();
+		WaitTimer timer = RandomTimer.class.getDeclaredConstructor().newInstance();
 		timer.init(new double[] { 2000 });
 		for (int i = 0; i < 1000; i++)
 			assertRange(2000, 3000, timer.getWaitTime());
@@ -45,7 +45,7 @@ public class RandomTimerTest {
 
 	@Test
 	public void testNormalInitialization() throws Exception {
-		WaitTimer timer = RandomTimer.class.newInstance();
+		WaitTimer timer = RandomTimer.class.getDeclaredConstructor().newInstance();
 		timer.init(new double[] { 2000, 2500 });
 		for (int i = 0; i < 1000; i++)
 			assertRange(2000, 2500, timer.getWaitTime());
@@ -53,7 +53,7 @@ public class RandomTimerTest {
 
 	@Test
 	public void testOverInitialization() throws Exception {
-		WaitTimer timer = RandomTimer.class.newInstance();
+		WaitTimer timer = RandomTimer.class.getDeclaredConstructor().newInstance();
 		timer.init(new double[] { 2000, 2500, 3000 });
 		for (int i = 0; i < 1000; i++)
 			assertRange(2000, 2500, timer.getWaitTime());

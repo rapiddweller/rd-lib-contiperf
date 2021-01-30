@@ -15,8 +15,6 @@
 package com.rapiddweller.profile;
 
 import static org.junit.Assert.*;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +43,7 @@ public class ProfilerTest {
         Profiler profiler = new Profiler("test", 100);
 
         //when
-        List<String> path = new ArrayList<String>();
+        List<String> path = new ArrayList<>();
         profiler.addSample(path, 1000);
         path.add("sub1");
         profiler.addSample(path, 200);
@@ -97,7 +95,7 @@ public class ProfilerTest {
     @Test
     public void testAddSample() {
         Profiler profiler = new Profiler("Name", 1L);
-        profiler.addSample(new ArrayList<String>(), 1L);
+        profiler.addSample(new ArrayList<>(), 1L);
         Profile rootProfile = profiler.getRootProfile();
         assertEquals(1L, rootProfile.getTotalLatency());
         assertEquals(1L, rootProfile.getInvocationCount());
@@ -107,7 +105,7 @@ public class ProfilerTest {
     public void testAddSample2() {
         Profiler profiler = new Profiler("Name", 0L);
         thrown.expect(ArithmeticException.class);
-        profiler.addSample(new ArrayList<String>(), 1L);
+        profiler.addSample(new ArrayList<>(), 1L);
     }
 
     @Test(expected=ArrayIndexOutOfBoundsException.class)
@@ -119,7 +117,7 @@ public class ProfilerTest {
     @Test
     public void testAddSample4() {
         Profiler profiler = new Profiler("Name", 1L);
-        ArrayList<String> stringList = new ArrayList<String>();
+        ArrayList<String> stringList = new ArrayList<>();
         stringList.add("E");
         profiler.addSample(stringList, 1L);
         assertEquals(profiler.getRootProfile().getName(), "Name");

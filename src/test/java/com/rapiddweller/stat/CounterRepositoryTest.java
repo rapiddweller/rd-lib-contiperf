@@ -44,8 +44,9 @@ public class CounterRepositoryTest {
 		repository.addSample(NAME, 100);
 		LatencyCounter counter = repository.getCounter(NAME);
 		assertNotNull("Counter should have been defined after calling addSample()", counter);
-		assertTrue("repository is expected to return the same counter instance on subsequent calls to getCounter()", 
-				counter == repository.getCounter(NAME));
+        assertSame(
+                "repository is expected to return the same counter instance on subsequent calls to getCounter()",
+                counter, repository.getCounter(NAME));
 		repository.clear();
 		assertNull("After calling clear(), the repository should have no counters", repository.getCounter(NAME));
 	}

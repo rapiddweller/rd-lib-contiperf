@@ -288,7 +288,7 @@ public class ContiPerfRuleTest {
 		
 		public AtomicInteger dontCancelOnViolationCount = new AtomicInteger();
 		@Required(max = 200)
-		@PerfTest(invocations = 3, cancelOnViolation = false)
+		@PerfTest(invocations = 3)
 		public void dontCancelOnViolation() throws InterruptedException {
 			int n = dontCancelOnViolationCount.incrementAndGet();
 			Thread.sleep(n * 150);
