@@ -14,14 +14,14 @@
  */
 package com.rapiddweller.contiperf.junit;
 
-import static org.junit.Assert.*;
-
 import com.rapiddweller.contiperf.PerfTest;
 import com.rapiddweller.contiperf.timer.ConstantTimer;
 import org.junit.AfterClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import static org.junit.Assert.assertTrue;
 
 /**
  * Tests the {@link ParallelRunner}.<br/><br/>

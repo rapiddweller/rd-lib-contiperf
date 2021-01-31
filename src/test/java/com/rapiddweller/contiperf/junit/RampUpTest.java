@@ -14,12 +14,12 @@
  */
 package com.rapiddweller.contiperf.junit;
 
-import static org.junit.Assert.assertTrue;
-
 import com.rapiddweller.contiperf.PerfTest;
 import org.junit.AfterClass;
 import org.junit.Rule;
 import org.junit.Test;
+
+import static org.junit.Assert.assertTrue;
 
 /**
  * Tests the ramp-up behavior of ContiPerf.<br/><br/>

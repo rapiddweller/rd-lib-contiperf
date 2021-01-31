@@ -14,10 +14,10 @@
  */
 package com.rapiddweller.contiperf.timer;
 
-import static org.junit.Assert.*;
-
 import com.rapiddweller.contiperf.WaitTimer;
 import org.junit.Test;
+
+import static org.junit.Assert.assertTrue;
 
 /**
  * Tests the {@link RandomTimer}.<br/><br/>

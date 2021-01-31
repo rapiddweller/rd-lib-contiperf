@@ -14,8 +14,6 @@
  */
 package com.rapiddweller.contiperf.junit;
 
-import static org.junit.Assert.*;
-
 import com.rapiddweller.contiperf.ExecutionLogger;
 import com.rapiddweller.contiperf.PerfTest;
 import com.rapiddweller.contiperf.log.FileExecutionLoggerTestUtil;
@@ -25,6 +23,8 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite.SuiteClasses;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Tests proper ExecutionLogger handling.<br/><br/>

@@ -14,18 +14,19 @@
  */
 package com.rapiddweller.contiperf.junit;
 
-import static org.junit.Assert.*;
-
-import java.lang.reflect.Method;
-import java.text.ParseException;
-import java.util.concurrent.atomic.AtomicInteger;
-
 import com.rapiddweller.contiperf.PerfTest;
 import com.rapiddweller.contiperf.Required;
 import com.rapiddweller.contiperf.report.ListReportModule;
 import org.junit.Test;
 import org.junit.runners.model.FrameworkMethod;
 import org.junit.runners.model.Statement;
+
+import java.lang.reflect.Method;
+import java.text.ParseException;
+import java.util.concurrent.atomic.AtomicInteger;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Tests the {@link ContiPerfRule}.<br/><br/>

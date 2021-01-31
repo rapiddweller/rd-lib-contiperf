@@ -14,16 +14,16 @@
  */
 package com.rapiddweller.contiperf.report;
 
-import java.io.*;
-import java.text.DateFormat;
-import java.text.DecimalFormat;
-import java.util.Date;
-
 import com.rapiddweller.contiperf.Config;
 import com.rapiddweller.contiperf.ExecutionConfig;
 import com.rapiddweller.contiperf.PercentileRequirement;
 import com.rapiddweller.contiperf.PerformanceRequirement;
 import com.rapiddweller.stat.LatencyCounter;
+
+import java.io.*;
+import java.text.DateFormat;
+import java.text.DecimalFormat;
+import java.util.Date;
 
 /**
  * {@link ReportModule} implementation that creates an HTML report of the 

@@ -14,13 +14,13 @@
  */
 package com.rapiddweller.contiperf;
 
-import java.io.PrintWriter;
-
 import com.rapiddweller.contiperf.clock.SystemClock;
 import com.rapiddweller.contiperf.report.ReportContext;
 import com.rapiddweller.contiperf.report.ReportModule;
 import com.rapiddweller.contiperf.util.InvokerProxy;
 import com.rapiddweller.stat.LatencyCounter;
+
+import java.io.PrintWriter;
 
 /**
  * {@link InvokerProxy} that provides performance tracking features.<br/><br/>

@@ -14,28 +14,22 @@
  */
 package com.rapiddweller.contiperf.junit;
 
-import java.lang.annotation.Annotation;
-import java.lang.reflect.Field;
-
-import junit.framework.AssertionFailedError;
-
-import com.rapiddweller.contiperf.Config;
-import com.rapiddweller.contiperf.ExecutionConfig;
-import com.rapiddweller.contiperf.ExecutionLogger;
-import com.rapiddweller.contiperf.PerfTest;
-import com.rapiddweller.contiperf.PerformanceRequirement;
-import com.rapiddweller.contiperf.Required;
+import com.rapiddweller.contiperf.*;
 import com.rapiddweller.contiperf.log.ConsoleExecutionLogger;
 import com.rapiddweller.contiperf.report.HtmlReportModule;
 import com.rapiddweller.contiperf.report.LoggerModuleAdapter;
 import com.rapiddweller.contiperf.report.ReportContext;
 import com.rapiddweller.contiperf.report.ReportModule;
 import com.rapiddweller.contiperf.util.ContiPerfUtil;
+import junit.framework.AssertionFailedError;
 import org.junit.internal.runners.statements.RunAfters;
 import org.junit.internal.runners.statements.RunBefores;
 import org.junit.rules.MethodRule;
 import org.junit.runners.model.FrameworkMethod;
 import org.junit.runners.model.Statement;
+
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Field;
 
 /**
  * Implements the JUnit {@link MethodRule} interface 

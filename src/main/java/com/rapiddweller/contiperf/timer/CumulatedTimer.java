@@ -14,9 +14,9 @@
  */
 package com.rapiddweller.contiperf.timer;
 
-import java.util.Random;
-
 import com.rapiddweller.contiperf.WaitTimer;
+
+import java.util.Random;
 
 /**
  * {@link WaitTimer} implementation which provides wait times in a range between min and max with lower probabilities

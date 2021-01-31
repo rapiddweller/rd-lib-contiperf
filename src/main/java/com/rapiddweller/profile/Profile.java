@@ -14,12 +14,12 @@
  */
 package com.rapiddweller.profile;
 
+import com.rapiddweller.stat.LatencyCounter;
+
 import java.text.DecimalFormat;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-
-import com.rapiddweller.stat.LatencyCounter;
 
 /**
  * Uses a {@link LatencyCounter} to collect profile information and manages sub profiles.<br/><br/>

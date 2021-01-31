@@ -14,8 +14,6 @@
  */
 package com.rapiddweller.contiperf.junit;
 
-import java.lang.reflect.Constructor;
-
 import org.junit.Before;
 import org.junit.runner.Description;
 import org.junit.runner.RunWith;
@@ -24,6 +22,8 @@ import org.junit.runner.notification.Failure;
 import org.junit.runner.notification.RunListener;
 import org.junit.runner.notification.RunNotifier;
 import org.junit.runners.BlockJUnit4ClassRunner;
+
+import java.lang.reflect.Constructor;
 
 /**
  * Parent class for tests that verify ContiPerf functionality.<br/><br/>

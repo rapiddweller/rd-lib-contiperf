@@ -14,14 +14,14 @@
  */
 package com.rapiddweller.contiperf.report;
 
+import com.rapiddweller.contiperf.ExecutionConfig;
+import com.rapiddweller.contiperf.PerformanceRequirement;
+import com.rapiddweller.stat.LatencyCounter;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
-
-import com.rapiddweller.contiperf.ExecutionConfig;
-import com.rapiddweller.contiperf.PerformanceRequirement;
-import com.rapiddweller.stat.LatencyCounter;
 
 /**
  * {@link ReportModule} that creates a CSV file with one line per invocation, 

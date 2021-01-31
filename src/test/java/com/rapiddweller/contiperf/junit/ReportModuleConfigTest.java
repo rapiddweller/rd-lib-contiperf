@@ -14,9 +14,6 @@
  */
 package com.rapiddweller.contiperf.junit;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-
 import com.rapiddweller.contiperf.PerfTest;
 import com.rapiddweller.contiperf.report.HtmlReportModule;
 import com.rapiddweller.contiperf.report.ReportContext;
@@ -26,6 +23,9 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite.SuiteClasses;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * Integration test for ContiPerf's {@link ReportModule} support.<br/><br/>

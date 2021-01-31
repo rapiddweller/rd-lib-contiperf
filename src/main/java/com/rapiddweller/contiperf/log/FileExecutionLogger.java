@@ -14,16 +14,12 @@
  */
 package com.rapiddweller.contiperf.log;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.util.concurrent.atomic.AtomicLong;
-
 import com.rapiddweller.contiperf.ExecutionLogger;
 import com.rapiddweller.contiperf.report.CSVSummaryReportModule;
 import com.rapiddweller.contiperf.util.ContiPerfUtil;
+
+import java.io.*;
+import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * {@link ExecutionLogger} implementation which writes the execution log to a file.<br/><br/>

@@ -14,13 +14,13 @@
  */
 package com.rapiddweller.contiperf.junit;
 
-import static org.junit.Assert.*;
-
 import com.rapiddweller.contiperf.PerfTest;
 import com.rapiddweller.contiperf.timer.ConstantTimer;
 import com.rapiddweller.contiperf.timer.RandomTimer;
 import org.junit.Rule;
 import org.junit.Test;
+
+import static org.junit.Assert.assertTrue;
 
 /**
  * Tests initialization and application of timers.<br/><br/>

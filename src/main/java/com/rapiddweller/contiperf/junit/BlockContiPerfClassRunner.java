@@ -14,9 +14,6 @@
  */
 package com.rapiddweller.contiperf.junit;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.junit.Rule;
 import org.junit.internal.runners.model.ReflectiveCallable;
 import org.junit.internal.runners.statements.Fail;
@@ -26,6 +23,9 @@ import org.junit.runners.model.FrameworkField;
 import org.junit.runners.model.FrameworkMethod;
 import org.junit.runners.model.InitializationError;
 import org.junit.runners.model.Statement;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Replaces the standard {@link BlockJUnit4ClassRunner} for supporting ContiPerf features 

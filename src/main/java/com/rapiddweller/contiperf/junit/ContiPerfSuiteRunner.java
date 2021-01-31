@@ -14,15 +14,15 @@
  */
 package com.rapiddweller.contiperf.junit;
 
-import java.util.Arrays;
-import java.util.List;
-
 import org.junit.internal.builders.AllDefaultPossibilitiesBuilder;
 import org.junit.runner.Runner;
 import org.junit.runner.notification.RunNotifier;
 import org.junit.runners.Suite;
 import org.junit.runners.model.InitializationError;
 import org.junit.runners.model.RunnerBuilder;
+
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * JUnit {@link Runner} class for wrapping test classes that are unaware of ContiPerf with 

@@ -14,9 +14,9 @@
  */
 package com.rapiddweller.contiperf.clock;
 
-import java.lang.management.ManagementFactory;
-
 import com.rapiddweller.contiperf.Clock;
+
+import java.lang.management.ManagementFactory;
 
 /**
  * {@link Clock} implementation which provides the user time of the current thread

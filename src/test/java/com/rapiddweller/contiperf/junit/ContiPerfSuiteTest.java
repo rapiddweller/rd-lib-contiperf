@@ -14,10 +14,6 @@
  */
 package com.rapiddweller.contiperf.junit;
 
-import static org.junit.Assert.*;
-
-import java.util.concurrent.atomic.AtomicInteger;
-
 import com.rapiddweller.contiperf.PerfTest;
 import org.junit.Before;
 import org.junit.Test;
@@ -25,6 +21,10 @@ import org.junit.runner.RunWith;
 import org.junit.runner.notification.RunNotifier;
 import org.junit.runners.Suite.SuiteClasses;
 import org.junit.runners.model.InitializationError;
+
+import java.util.concurrent.atomic.AtomicInteger;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Tests {@link ContiPerfSuiteRunner} processing.<br/><br/>
