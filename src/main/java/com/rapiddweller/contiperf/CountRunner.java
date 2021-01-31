@@ -14,9 +14,9 @@
  */
 package com.rapiddweller.contiperf;
 
-import java.util.concurrent.atomic.AtomicLong;
-
 import com.rapiddweller.contiperf.util.ContiPerfUtil;
+
+import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * Calls the invoker a fixed number of times.<br/><br/>

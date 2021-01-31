@@ -14,12 +14,12 @@
  */
 package com.rapiddweller.contiperf.report;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.rapiddweller.contiperf.ExecutionConfig;
 import com.rapiddweller.contiperf.PerformanceRequirement;
 import com.rapiddweller.stat.LatencyCounter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * {@link ReportModule} that stores all invocation information in {@link List}s.<br/><br/>

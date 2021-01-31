@@ -14,10 +14,10 @@
  */
 package com.rapiddweller.contiperf.timer;
 
-import static org.junit.Assert.assertEquals;
-
 import com.rapiddweller.contiperf.WaitTimer;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Tests the '{@link None}' wait timer.<br/><br/>

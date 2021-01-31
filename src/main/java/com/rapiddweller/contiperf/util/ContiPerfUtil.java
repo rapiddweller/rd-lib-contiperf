@@ -14,22 +14,14 @@
  */
 package com.rapiddweller.contiperf.util;
 
+import com.rapiddweller.contiperf.*;
+import com.rapiddweller.contiperf.clock.SystemClock;
+
 import java.io.Closeable;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import com.rapiddweller.contiperf.Clock;
-import com.rapiddweller.contiperf.ExecutionConfig;
-import com.rapiddweller.contiperf.PercentileRequirement;
-import com.rapiddweller.contiperf.PerfTest;
-import com.rapiddweller.contiperf.PerfTestConfigurationError;
-import com.rapiddweller.contiperf.PerfTestException;
-import com.rapiddweller.contiperf.PerfTestExecutionError;
-import com.rapiddweller.contiperf.PerformanceRequirement;
-import com.rapiddweller.contiperf.Required;
-import com.rapiddweller.contiperf.clock.SystemClock;
 
 /**
  * Provides I/O utility methods.<br/><br/>

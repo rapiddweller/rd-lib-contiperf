@@ -14,13 +14,13 @@
  */
 package com.rapiddweller.contiperf.junit;
 
-import static org.junit.Assert.*;
-
 import com.rapiddweller.contiperf.PerfTest;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Verifies that before and after methods are executed only once for each test method.<br/><br/>

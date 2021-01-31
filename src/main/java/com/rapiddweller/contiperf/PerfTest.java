@@ -14,18 +14,18 @@
  */
 package com.rapiddweller.contiperf;
 
-import static java.lang.annotation.ElementType.METHOD;
-import static java.lang.annotation.ElementType.TYPE;
-import static java.lang.annotation.RetentionPolicy.RUNTIME;
+import com.rapiddweller.contiperf.timer.ConstantTimer;
+import com.rapiddweller.contiperf.timer.CumulatedTimer;
+import com.rapiddweller.contiperf.timer.None;
+import com.rapiddweller.contiperf.timer.RandomTimer;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
-import com.rapiddweller.contiperf.timer.ConstantTimer;
-import com.rapiddweller.contiperf.timer.CumulatedTimer;
-import com.rapiddweller.contiperf.timer.None;
-import com.rapiddweller.contiperf.timer.RandomTimer;
+import static java.lang.annotation.ElementType.METHOD;
+import static java.lang.annotation.ElementType.TYPE;
+import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
  * Defines execution details and performance requirements for a test method:

@@ -14,14 +14,14 @@
  */
 package com.rapiddweller.contiperf.junit;
 
-import java.util.Random;
-
-import com.rapiddweller.contiperf.Required;
 import com.rapiddweller.contiperf.PerfTest;
+import com.rapiddweller.contiperf.Required;
 import com.rapiddweller.contiperf.Unrepeatable;
 import com.rapiddweller.contiperf.report.EmptyReportModule;
 import org.junit.Rule;
 import org.junit.Test;
+
+import java.util.Random;
 
 public class SmokeTest {
 	

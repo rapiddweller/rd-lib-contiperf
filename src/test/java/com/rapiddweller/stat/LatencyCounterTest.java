@@ -14,9 +14,9 @@
  */
 package com.rapiddweller.stat;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Tests the {@link LatencyCounter}.<br/><br/>

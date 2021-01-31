@@ -14,6 +14,11 @@
  */
 package com.rapiddweller.contiperf.report;
 
+import com.rapiddweller.contiperf.ExecutionConfig;
+import com.rapiddweller.contiperf.PerformanceRequirement;
+import com.rapiddweller.contiperf.util.ContiPerfUtil;
+import com.rapiddweller.stat.LatencyCounter;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -23,11 +28,6 @@ import java.text.DecimalFormatSymbols;
 import java.util.HashSet;
 import java.util.Locale;
 import java.util.Set;
-
-import com.rapiddweller.contiperf.ExecutionConfig;
-import com.rapiddweller.contiperf.PerformanceRequirement;
-import com.rapiddweller.contiperf.util.ContiPerfUtil;
-import com.rapiddweller.stat.LatencyCounter;
 
 /**
  * Writes summary information of the ContiPerf to a CSV file.<br/><br/>

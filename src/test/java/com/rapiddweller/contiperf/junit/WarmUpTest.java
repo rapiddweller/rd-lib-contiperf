@@ -14,15 +14,15 @@
  */
 package com.rapiddweller.contiperf.junit;
 
-import static org.junit.Assert.*;
-
-import java.util.concurrent.atomic.AtomicInteger;
-
 import com.rapiddweller.contiperf.PerfTest;
 import com.rapiddweller.contiperf.Required;
 import org.junit.AfterClass;
 import org.junit.Rule;
 import org.junit.Test;
+
+import java.util.concurrent.atomic.AtomicInteger;
+
+import static org.junit.Assert.assertTrue;
 
 /**
  * Tests handling of warmUp settings.<br/><br/>

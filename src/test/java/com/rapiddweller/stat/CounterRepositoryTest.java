@@ -14,12 +14,10 @@
  */
 package com.rapiddweller.stat;
 
-import static org.junit.Assert.*;
-
-import com.rapiddweller.stat.CounterRepository;
-import com.rapiddweller.stat.LatencyCounter;
 import org.junit.After;
 import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 /**
  * Tests the {@link CounterRepository}.<br/><br/>

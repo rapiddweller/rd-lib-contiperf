@@ -14,13 +14,13 @@
  */
 package com.rapiddweller.contiperf.log;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.rapiddweller.contiperf.ExecutionLogger;
 import com.rapiddweller.contiperf.report.InvocationLog;
 import com.rapiddweller.contiperf.report.InvocationSummary;
 import com.rapiddweller.contiperf.report.ListReportModule;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * {@link ExecutionLogger} implementation that stores all reported invocation logs and 

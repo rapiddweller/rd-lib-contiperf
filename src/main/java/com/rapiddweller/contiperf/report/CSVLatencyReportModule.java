@@ -14,16 +14,11 @@
  */
 package com.rapiddweller.contiperf.report;
 
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-
 import com.rapiddweller.contiperf.ExecutionConfig;
 import com.rapiddweller.contiperf.PerformanceRequirement;
 import com.rapiddweller.stat.LatencyCounter;
+
+import java.io.*;
 
 /**
  * {@link ReportModule} which creates a CSV file that reports how often (2nd column) 

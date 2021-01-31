@@ -14,10 +14,10 @@
  */
 package com.rapiddweller.contiperf;
 
-import java.io.File;
-
 import com.rapiddweller.contiperf.report.HtmlReportModule;
 import com.rapiddweller.contiperf.report.ReportContext;
+
+import java.io.File;
 
 /**
  * Parses and provides the ContiPerf configuration.<br/><br/>

@@ -14,14 +14,14 @@
  */
 package com.rapiddweller.contiperf.junit;
 
-import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.List;
-
 import com.rapiddweller.contiperf.Config;
 import com.rapiddweller.contiperf.report.LoggerModuleAdapter;
 import com.rapiddweller.contiperf.report.ReportContext;
 import com.rapiddweller.contiperf.report.ReportModule;
+
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * JUnit-specific implementation of the ReportContext interface.<br/><br/>

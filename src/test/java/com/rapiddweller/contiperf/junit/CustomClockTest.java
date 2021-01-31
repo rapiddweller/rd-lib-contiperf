@@ -14,10 +14,6 @@
  */
 package com.rapiddweller.contiperf.junit;
 
-import static org.junit.Assert.*;
-
-import java.util.List;
-
 import com.rapiddweller.contiperf.Clock;
 import com.rapiddweller.contiperf.PerfTest;
 import com.rapiddweller.contiperf.clock.AbstractClock;
@@ -26,6 +22,10 @@ import com.rapiddweller.contiperf.report.ListReportModule;
 import org.junit.After;
 import org.junit.Rule;
 import org.junit.Test;
+
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Tests the usage of custom {@link Clock}s.<br/><br/>

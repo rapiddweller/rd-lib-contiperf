@@ -14,9 +14,9 @@
  */
 package com.rapiddweller.stat;
 
-import java.io.PrintWriter;
-
 import com.rapiddweller.contiperf.clock.SystemClock;
+
+import java.io.PrintWriter;
 
 /**
  * Counts latencies and calculates performance-related statistics.<br/><br/>

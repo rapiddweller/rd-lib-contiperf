@@ -14,13 +14,11 @@
  */
 package com.rapiddweller.contiperf.report;
 
-import java.io.UnsupportedEncodingException;
-import java.util.Random;
-
-import com.rapiddweller.contiperf.report.GoogleLatencyRenderer;
-import com.rapiddweller.contiperf.report.LatencyDataSet;
 import com.rapiddweller.stat.LatencyCounter;
 import org.junit.Test;
+
+import java.io.UnsupportedEncodingException;
+import java.util.Random;
 
 /**
  * Tests the {@link GoogleLatencyRenderer}.<br/><br/>
