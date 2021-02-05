@@ -2,6 +2,7 @@
 ![.github/workflows/ci.yml](https://github.com/rapiddweller/rd-lib-contiperf/workflows/.github/workflows/ci.yml/badge.svg)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/a5b91a40f4be46e58c494f6894b83378)](https://www.codacy.com/gh/rapiddweller/rd-lib-contiperf/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=rapiddweller/rd-lib-contiperf&amp;utm_campaign=Badge_Grade)
 [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/a5b91a40f4be46e58c494f6894b83378)](https://www.codacy.com/gh/rapiddweller/rd-lib-contiperf/dashboard?utm_source=github.com&utm_medium=referral&utm_content=rapiddweller/rd-lib-contiperf&utm_campaign=Badge_Coverage)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.rapiddweller/rd-lib-contiperf/badge.svg)](https://search.maven.org/artifact/com.rapiddweller/rd-lib-contiperf)
 
 'rapiddweller Contiperf' is an open source Java library forked from Databene Contiperf by Volker Bergmann.
 
