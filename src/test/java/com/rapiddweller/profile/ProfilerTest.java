@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
 /**
@@ -83,13 +84,7 @@ public class ProfilerTest {
 
     @Test
     public void testDefaultInstance() {
-        // TODO: This test is incomplete.
-        //   Reason: No meaningful assertions found.
-        //   To help Diffblue Cover to find assertions, please add getters to the
-        //   class under test that return fields written by the method under test.
-        //   See https://diff.blue/R004
-
-        Profiler.defaultInstance();
+        assertNotNull(Profiler.defaultInstance());
     }
 
     @Test
@@ -120,7 +115,7 @@ public class ProfilerTest {
         ArrayList<String> stringList = new ArrayList<>();
         stringList.add("E");
         profiler.addSample(stringList, 1L);
-        assertEquals(profiler.getRootProfile().getName(), "Name");
+        assertEquals("Name", profiler.getRootProfile().getName());
     }
 
     @Test
