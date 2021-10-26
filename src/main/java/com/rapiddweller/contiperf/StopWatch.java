@@ -52,10 +52,22 @@ public class StopWatch {
 		this.name = name;
 		this.startTime = System.nanoTime();
 	}
-	
-	public long stop() {
+
+	public String getName() {
+		return name;
+	}
+
+	public int elapsedTime() {
+		return (startTime == -1 ? -1 : (int) ((System.nanoTime() - startTime) / 1000000L));
+	}
+
+	public boolean isRunning() {
+		return (startTime != -1);
+	}
+
+	public int stop() {
 		if (startTime == -1)
-			throw new RuntimeException("Called stop() on StopWatch '" + name + "' which has already been stopped");
+			throw new IllegalStateException("Called stop() on StopWatch '" + name + "' which has already been stopped");
 		int latency = (int) ((System.nanoTime() - startTime) / 1000000L);
 		startTime = -1;
 		CounterRepository.getInstance().addSample(name, latency);
