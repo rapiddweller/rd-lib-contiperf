@@ -126,6 +126,10 @@ public final class LatencyCounter {
         return sampleCount;
     }
 
+    public void setSampleCount(long sampleCount) {
+      this.sampleCount = sampleCount;
+    }
+
     public long percentileLatency(int percentile) {
         long targetCount = percentile * sampleCount / 100;
         long count = 0;
@@ -139,7 +143,7 @@ public final class LatencyCounter {
     
     public double percentileAboveLatency(int latency) {
         long count = 0;
-        for (long value = latency + 1; value <= maxLatency; value++)
+        for (long value = (long) latency + 1; value <= maxLatency; value++)
             count += getLatencyCount(value);
         return (count * 100.) / sampleCount;
     }
