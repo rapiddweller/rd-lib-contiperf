@@ -83,6 +83,7 @@ public class MemorySensor {
 		private final int interval;
 		
 		public MeasurementThread(int interval) {
+			super("Benerator-Memory-Sensor-Thread");
 			this.interval = interval;
 			setDaemon(true);
 		}
